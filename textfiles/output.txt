@@ -1,0 +1,362 @@
+Output 1
+
+Attempting to build the cars...
+Printing the first car after building...
+Ford Focus Wagon ZTW 2012
+Base Price: $18445.00
+Option Set Name: Color
+- Fort Knox Gold Clearcoat Metallic: $0.00
+- Liquid Grey Clearcoat Metallic: $0.00
+- Infra-Red Clearcoat: $0.00
+- Grabber Green Clearcoat Metallic: $0.00
+- Sangria Red Clearcoat Metallic: $0.00
+- French Blue Clearcoat Metallic: $0.00
+- Twilight Blue Clearcoat Metallic: $0.00
+- CD Silver Clearcoat Metallic: $0.00
+- Pitch Black Clearcoat: $0.00
+- Cloud 9 White Clearcoat: $0.00
+Option Set Name: Transmission
+- Automatic: $0.00
+- Manual: $-815.00
+Option Set Name: Brakes/Traction Control
+- Standard: $0.00
+- ABS: $400.00
+- ABS with Advance Trac: $1625.00
+Option Set Name: Side Impact Air Bags
+- Selected: $350.00
+- Not Selected: $0.00
+Option Set Name: Power Moonroof
+- Selected: $595.00
+- Not Selected: $0.00
+
+Printing the second car after building...
+Ford Focus RS 2017
+Base Price: $31291.00
+Option Set Name: Color
+- Fort Knox Gold Clearcoat Metallic: $0.00
+- Liquid Grey Clearcoat Metallic: $0.00
+- Infra-Red Clearcoat: $0.00
+- Grabber Green Clearcoat Metallic: $0.00
+- Sangria Red Clearcoat Metallic: $0.00
+- French Blue Clearcoat Metallic: $0.00
+- Twilight Blue Clearcoat Metallic: $0.00
+- CD Silver Clearcoat Metallic: $0.00
+- Pitch Black Clearcoat: $0.00
+- Cloud 9 White Clearcoat: $0.00
+Option Set Name: Transmission
+- Automatic: $0.00
+- Manual: $-815.00
+Option Set Name: Brakes/Traction Control
+- Standard: $0.00
+- ABS: $400.00
+- ABS with Advance Trac: $1625.00
+Option Set Name: Side Impact Air Bags
+- Selected: $350.00
+- Not Selected: $0.00
+Option Set Name: Power Moonroof
+- Selected: $595.00
+- Not Selected: $0.00
+Option Set Name: Apple CarPlay
+- Selected: $300.00
+- Not Selected: $0.00
+Option Set Name: Tire Kit
+- Standard: $0.00
+- Upgrade: $400.00
+
+Updating car's option set name...
+Updating the second car's option price...
+
+Printing the second car after updating...
+Ford Focus RS 2017
+Base Price: $31291.00
+Option Set Name: Colour
+- Fort Knox Gold Clearcoat Metallic: $0.00
+- Liquid Grey Clearcoat Metallic: $0.00
+- Infra-Red Clearcoat: $0.00
+- Grabber Green Clearcoat Metallic: $0.00
+- Sangria Red Clearcoat Metallic: $0.00
+- French Blue Clearcoat Metallic: $0.00
+- Twilight Blue Clearcoat Metallic: $0.00
+- CD Silver Clearcoat Metallic: $0.00
+- Pitch Black Clearcoat: $0.00
+- Cloud 9 White Clearcoat: $0.00
+Option Set Name: Transmission
+- Automatic: $0.00
+- Manual: $-815.00
+Option Set Name: Brakes/Traction Control
+- Standard: $0.00
+- ABS: $400.00
+- ABS with Advance Trac: $1625.00
+Option Set Name: Side Impact Air Bags
+- Selected: $350.00
+- Not Selected: $0.00
+Option Set Name: Power Moonroof
+- Selected: $595.00
+- Not Selected: $0.00
+Option Set Name: Apple CarPlay
+- Selected: $300.00
+- Not Selected: $0.00
+Option Set Name: Tire Kit
+- Standard: $0.00
+- Upgrade: $400.00
+
+Testing choice operations on the first car...
+
+Selecting options for: Ford Focus Wagon ZTW 2012
+Please enter choice for Color
+Fort Knox Gold Clearcoat Metallic
+Please enter choice for Transmission
+Manual
+Please enter choice for Brakes/Traction Control
+ABS with Advance Trac
+Please enter choice for Side Impact Air Bags
+Selected
+Please enter choice for Power Moonroof
+Selected
+Ford Focus Wagon ZTW 2012 with selected options:
+- Fort Knox Gold Clearcoat Metallic: $0.00
+- Manual: $-815.00
+- ABS with Advance Trac: $1625.00
+- Selected: $350.00
+- Selected: $595.00
+
+Total cost after selecting options is: 20200.0
+--------------------------------------------------
+Output 2
+
+Attempting to build the cars...
+Printing the first car after building...
+Ford Focus Wagon ZTW 2012
+Base Price: $18445.00
+Option Set Name: Color
+- Fort Knox Gold Clearcoat Metallic: $0.00
+- Liquid Grey Clearcoat Metallic: $0.00
+- Infra-Red Clearcoat: $0.00
+- Grabber Green Clearcoat Metallic: $0.00
+- Sangria Red Clearcoat Metallic: $0.00
+- French Blue Clearcoat Metallic: $0.00
+- Twilight Blue Clearcoat Metallic: $0.00
+- CD Silver Clearcoat Metallic: $0.00
+- Pitch Black Clearcoat: $0.00
+- Cloud 9 White Clearcoat: $0.00
+Option Set Name: Transmission
+- Automatic: $0.00
+- Manual: $-815.00
+Option Set Name: Brakes/Traction Control
+- Standard: $0.00
+- ABS: $400.00
+- ABS with Advance Trac: $1625.00
+Option Set Name: Side Impact Air Bags
+- Selected: $350.00
+- Not Selected: $0.00
+Option Set Name: Power Moonroof
+- Selected: $595.00
+- Not Selected: $0.00
+
+Printing the second car after building...
+Ford Focus RS 2017
+Base Price: $31291.00
+Option Set Name: Color
+- Fort Knox Gold Clearcoat Metallic: $0.00
+- Liquid Grey Clearcoat Metallic: $0.00
+- Infra-Red Clearcoat: $0.00
+- Grabber Green Clearcoat Metallic: $0.00
+- Sangria Red Clearcoat Metallic: $0.00
+- French Blue Clearcoat Metallic: $0.00
+- Twilight Blue Clearcoat Metallic: $0.00
+- CD Silver Clearcoat Metallic: $0.00
+- Pitch Black Clearcoat: $0.00
+- Cloud 9 White Clearcoat: $0.00
+Option Set Name: Transmission
+- Automatic: $0.00
+- Manual: $-815.00
+Option Set Name: Brakes/Traction Control
+- Standard: $0.00
+- ABS: $400.00
+- ABS with Advance Trac: $1625.00
+Option Set Name: Side Impact Air Bags
+- Selected: $350.00
+- Not Selected: $0.00
+Option Set Name: Power Moonroof
+- Selected: $595.00
+- Not Selected: $0.00
+Option Set Name: Apple CarPlay
+- Selected: $300.00
+- Not Selected: $0.00
+Option Set Name: Tire Kit
+- Standard: $0.00
+- Upgrade: $400.00
+
+Updating car's option set name...
+Updating the second car's option price...
+
+Printing the second car after updating...
+Ford Focus RS 2017
+Base Price: $31291.00
+Option Set Name: Colour
+- Fort Knox Gold Clearcoat Metallic: $0.00
+- Liquid Grey Clearcoat Metallic: $0.00
+- Infra-Red Clearcoat: $0.00
+- Grabber Green Clearcoat Metallic: $0.00
+- Sangria Red Clearcoat Metallic: $0.00
+- French Blue Clearcoat Metallic: $0.00
+- Twilight Blue Clearcoat Metallic: $0.00
+- CD Silver Clearcoat Metallic: $0.00
+- Pitch Black Clearcoat: $0.00
+- Cloud 9 White Clearcoat: $0.00
+Option Set Name: Transmission
+- Automatic: $0.00
+- Manual: $-815.00
+Option Set Name: Brakes/Traction Control
+- Standard: $0.00
+- ABS: $400.00
+- ABS with Advance Trac: $1625.00
+Option Set Name: Side Impact Air Bags
+- Selected: $350.00
+- Not Selected: $0.00
+Option Set Name: Power Moonroof
+- Selected: $595.00
+- Not Selected: $0.00
+Option Set Name: Apple CarPlay
+- Selected: $300.00
+- Not Selected: $0.00
+Option Set Name: Tire Kit
+- Standard: $0.00
+- Upgrade: $400.00
+
+Testing choice operations on the first car...
+
+Selecting options for: Ford Focus Wagon ZTW 2012
+Please enter choice for Color
+Grabber Green Clearcoat Metallic
+Please enter choice for Transmission
+asfasd
+Invalid choice
+Please enter choice for Transmission
+Automatic
+Please enter choice for Brakes/Traction Control
+ABS
+Please enter choice for Side Impact Air Bags
+Not Selected
+Please enter choice for Power Moonroof
+Not Selected
+Ford Focus Wagon ZTW 2012 with selected options:
+- Grabber Green Clearcoat Metallic: $0.00
+- Automatic: $0.00
+- ABS: $400.00
+- Not Selected: $0.00
+- Not Selected: $0.00
+
+Total cost after selecting options is: 18845.0
+--------------------------------------------------
+Output 3
+
+Attempting to build the cars...
+Printing the first car after building...
+Ford Electric Scooter XL 2020
+Base Price: $2345.00
+Option Set Name: Color
+- Fort Knox Gold Clearcoat Metallic: $0.00
+- Liquid Grey Clearcoat Metallic: $0.00
+- Infra-Red Clearcoat: $0.00
+- Grabber Green Clearcoat Metallic: $0.00
+- Sangria Red Clearcoat Metallic: $0.00
+- French Blue Clearcoat Metallic: $0.00
+- Twilight Blue Clearcoat Metallic: $0.00
+- CD Silver Clearcoat Metallic: $0.00
+- Pitch Black Clearcoat: $0.00
+- Cloud 9 White Clearcoat: $0.00
+Option Set Name: Transmission
+- Automatic: $0.00
+- Manual: $-815.00
+Option Set Name: Brakes/Traction Control
+- Standard: $0.00
+- ABS: $400.00
+- ABS with Advance Trac: $1625.00
+
+Printing the second car after building...
+Ford Focus RS 2017
+Base Price: $31291.00
+Option Set Name: Color
+- Fort Knox Gold Clearcoat Metallic: $0.00
+- Liquid Grey Clearcoat Metallic: $0.00
+- Infra-Red Clearcoat: $0.00
+- Grabber Green Clearcoat Metallic: $0.00
+- Sangria Red Clearcoat Metallic: $0.00
+- French Blue Clearcoat Metallic: $0.00
+- Twilight Blue Clearcoat Metallic: $0.00
+- CD Silver Clearcoat Metallic: $0.00
+- Pitch Black Clearcoat: $0.00
+- Cloud 9 White Clearcoat: $0.00
+Option Set Name: Transmission
+- Automatic: $0.00
+- Manual: $-815.00
+Option Set Name: Brakes/Traction Control
+- Standard: $0.00
+- ABS: $400.00
+- ABS with Advance Trac: $1625.00
+Option Set Name: Side Impact Air Bags
+- Selected: $350.00
+- Not Selected: $0.00
+Option Set Name: Power Moonroof
+- Selected: $595.00
+- Not Selected: $0.00
+Option Set Name: Apple CarPlay
+- Selected: $300.00
+- Not Selected: $0.00
+Option Set Name: Tire Kit
+- Standard: $0.00
+- Upgrade: $400.00
+
+Updating car's option set name...
+Updating the second car's option price...
+
+Printing the second car after updating...
+Ford Focus RS 2017
+Base Price: $31291.00
+Option Set Name: Colour
+- Fort Knox Gold Clearcoat Metallic: $0.00
+- Liquid Grey Clearcoat Metallic: $0.00
+- Infra-Red Clearcoat: $0.00
+- Grabber Green Clearcoat Metallic: $0.00
+- Sangria Red Clearcoat Metallic: $0.00
+- French Blue Clearcoat Metallic: $0.00
+- Twilight Blue Clearcoat Metallic: $0.00
+- CD Silver Clearcoat Metallic: $0.00
+- Pitch Black Clearcoat: $0.00
+- Cloud 9 White Clearcoat: $0.00
+Option Set Name: Transmission
+- Automatic: $0.00
+- Manual: $-815.00
+Option Set Name: Brakes/Traction Control
+- Standard: $0.00
+- ABS: $400.00
+- ABS with Advance Trac: $1625.00
+Option Set Name: Side Impact Air Bags
+- Selected: $350.00
+- Not Selected: $0.00
+Option Set Name: Power Moonroof
+- Selected: $595.00
+- Not Selected: $0.00
+Option Set Name: Apple CarPlay
+- Selected: $300.00
+- Not Selected: $0.00
+Option Set Name: Tire Kit
+- Standard: $0.00
+- Upgrade: $400.00
+
+Testing choice operations on the first car...
+
+Selecting options for: Ford Electric Scooter XL 2020
+Please enter choice for Color
+Pitch Black Clearcoat
+Please enter choice for Transmission
+Automatic
+Please enter choice for Brakes/Traction Control
+ABS with Advance Trac
+Ford Electric Scooter XL 2020 with selected options:
+- Pitch Black Clearcoat: $0.00
+- Automatic: $0.00
+- ABS with Advance Trac: $1625.00
+
+Total cost after selecting options is: 3970.0
