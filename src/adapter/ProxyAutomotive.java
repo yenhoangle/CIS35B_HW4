@@ -3,6 +3,7 @@ import exception.AutoException;
 import model.AutoTemplate;
 import model.Automotive;
 import util.FileIO;
+import scale.*;
 import java.util.Scanner;
 
 public abstract class ProxyAutomotive {
@@ -52,5 +53,18 @@ public abstract class ProxyAutomotive {
     }
     public float calculatePrice(String key) {
         return at1.getVehicle(key).getTotalPrice();
+    }
+
+    //implements ScaleAuto methods
+    public void syncUpdateOptionSetName(int threadNum, String key, String opsetName, String newOpsetName) {
+
+    }
+
+    public void syncUpdateOptionName(int threadNum, String key, String opsetName, String opName, String newOpName) {
+
+    }
+
+    public void syncUpdateOptionPrice(int threadNum, String key, String opsetName, String opName, float newPrice) {
+
     }
 }
