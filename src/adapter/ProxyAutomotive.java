@@ -26,16 +26,16 @@ public abstract class ProxyAutomotive {
         at1.addVehicle(toBuild.getName(), toBuild); //also add a1 to the hash map
     }
 
-    public void printAuto(String modelName) {
+    public synchronized void printAuto(String modelName) {
         at1.getVehicle(modelName).print();
     }
 
     //UpdateAuto interface methods via subclass BuildAuto
-    public void updateOptionSetName(String key, String opsetName, String newOpsetName) {
+    public synchronized void updateOptionSetName(String key, String opsetName, String newOpsetName) {
         at1.getVehicle(key).updateOpsetName(opsetName, newOpsetName);
     }
 
-    public void updateOptionPrice(String key, String opsetName, String opName, float newPrice) {
+    public synchronized void updateOptionPrice(String key, String opsetName, String opName, float newPrice) {
         at1.getVehicle(key).updateOpPrice(opsetName, opName, newPrice);
     }
 
@@ -61,21 +61,21 @@ public abstract class ProxyAutomotive {
     }
 
     //implements ScaleAuto interface methods
-    public void updateOptionSetName(int threadNum, String key, String opsetName, String newOpsetName) {
+    public synchronized void updateOptionSetName(int threadNum, String key, String opsetName, String newOpsetName) {
         //start thread with a number
         EditOptions thread = new EditOptions(threadNum, key, opsetName, newOpsetName);
         //run
         thread.start();
     }
 
-    public void updateOptionName(int threadNum, String key, String opsetName, String opName, String newOpName) {
+    public synchronized void updateOptionName(int threadNum, String key, String opsetName, String opName, String newOpName) {
         //start thread with a number
         EditOptions thread = new EditOptions(threadNum, key, opsetName, opName, newOpName);
         //run
         thread.start();
     }
 
-    public void updateOptionPrice(int threadNum, String key, String opsetName, String opName, float newPrice) {
+    public synchronized void updateOptionPrice(int threadNum, String key, String opsetName, String opName, float newPrice) {
         //start thread with a number
         EditOptions thread = new EditOptions(threadNum, key, opsetName, opName, newPrice);
         //run

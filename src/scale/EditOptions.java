@@ -26,6 +26,7 @@ public class EditOptions extends ProxyAutomotive implements Runnable {
 
     //constructor for thread editing option set name
     public EditOptions(int threadNum, String key, String opsetName, String newOpsetName) {
+        editOp = "syncUpdateOptionSetName";
         thread = new Thread(this);
         this.isBusy = false;
         this.threadNum = threadNum;
@@ -37,6 +38,7 @@ public class EditOptions extends ProxyAutomotive implements Runnable {
 
     //constructor for thread editing option name
     public EditOptions(int threadNum, String key, String opsetName, String optionName, String newOptionName) {
+        editOp = "syncUpdateOptionName";
         thread = new Thread(this);
         this.isBusy = false;
         this.threadNum = threadNum;
@@ -47,7 +49,9 @@ public class EditOptions extends ProxyAutomotive implements Runnable {
         this.newOptionName = newOptionName;
     }
 
+    //constructor for thread editing option price
     public EditOptions(int threadNum, String key, String opsetName, String optionName, float newOptionPrice) {
+        editOp = "syncUpdateOptionPrice";
         thread = new Thread(this);
         this.isBusy = false;
         this.threadNum = threadNum;
@@ -59,9 +63,8 @@ public class EditOptions extends ProxyAutomotive implements Runnable {
     }
 
     public void syncUpdateOptionSetName(String key, String opsetName, String newOpsetName) {
-        editOp = "syncUpdateOptionSetName";
-        OptionSet optionSet = getAutoTemplate().getVehicle(key).findOpset(opsetName);
-        synchronized (optionSet) {
+        //OptionSet optionSet = getAutoTemplate().getVehicle(key).findOpset(opsetName);
+        synchronized (getAutoTemplate().getVehicle(key)) {
             //if there is already an edit option running, wait
             while (isBusy) {
                 try {
@@ -79,9 +82,8 @@ public class EditOptions extends ProxyAutomotive implements Runnable {
     }
 
     public void syncUpdateOptionName(String key, String opsetName, String opName, String newOpName) {
-        editOp = "syncUpdateOptionName";
         Option option = getAutoTemplate().getVehicle(key).findOption(opsetName, opName);
-        synchronized (option) {
+        synchronized (getAutoTemplate().getVehicle(key)) {
             while(isBusy) {
                 try {
                     wait();
@@ -98,9 +100,8 @@ public class EditOptions extends ProxyAutomotive implements Runnable {
     }
 
     public void syncUpdateOptionPrice(String key, String opsetName, String opName, float newPrice) {
-        editOp = "syncUpdateOptionPrice";
         Option option = getAutoTemplate().getVehicle(key).findOption(opsetName, opName);
-        synchronized (option) {
+        synchronized (getAutoTemplate().getVehicle(key)) {
             while(isBusy) {
                 try {
                     wait();

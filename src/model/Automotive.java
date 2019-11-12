@@ -33,71 +33,71 @@ public class Automotive implements Serializable {
     }
 
     //getters
-    public String getName() {
+    public synchronized String getName() {
         return(make + " " + model + " " + year);
     }
-    public String getMake() {
+    public synchronized String getMake() {
         return make;
     }
-    public String getModel() {
+    public synchronized String getModel() {
         return model;
     }
-    public String getYear() {return year; }
-    public float getBaseprice() {
+    public synchronized String getYear() {return year; }
+    public synchronized float getBaseprice() {
         return baseprice;
     }
 
-    public ArrayList<OptionSet> getOpsets() {
+    public synchronized ArrayList<OptionSet> getOpsets() {
         return optionSets;
     }
 
-    public ArrayList<Option> getChoices() {
+    public synchronized ArrayList<Option> getChoices() {
         return choices;
     }
 
-    public OptionSet getOpSet(int index) {
+    public synchronized OptionSet getOpSet(int index) {
         return optionSets.get(index);
     }
 
-    public String getOpSetName(int index) {
+    public synchronized String getOpSetName(int index) {
         return getOpSet(index).getName();
     }
 
         //get option chosen for a given option set
-    public Option getOptionChoice(String opsetName) {
+    public synchronized Option getOptionChoice(String opsetName) {
         int opsetIndex = findOpsetIndex(opsetName);
         return optionSets.get(opsetIndex).getOpChoice();
     }
 
-    public String getChoiceName(String opsetName) {
+    public synchronized String getChoiceName(String opsetName) {
         return getOptionChoice(opsetName).getName();
     }
 
-    public float getChoicePrice(String opsetName) {
+    public synchronized float getChoicePrice(String opsetName) {
         return getOptionChoice(opsetName).getPrice();
     }
 
     //get opchoice, get opchoiceprice, set opchoice, get totalprice
     //setters
-    public void setMake(String make) {
+    public synchronized void setMake(String make) {
         this.make = make;
     }
 
-    public void setModel(String model) {
+    public synchronized void setModel(String model) {
         this.model = model;
     }
 
-    public void setYear(String year) { this.year = year; }
+    public synchronized void setYear(String year) { this.year = year; }
 
-    public void setBaseprice(float price) {
+    public synchronized void setBaseprice(float price) {
         this.baseprice = price;
     }
 
-    public void setChoices(ArrayList<Option> choices) {
+    public synchronized void setChoices(ArrayList<Option> choices) {
         this.choices = choices;
     }
 
-    public int findOpsetIndex(String opsetName) {
+    public synchronized int findOpsetIndex(String opsetName) {
         for (OptionSet opset : optionSets) {
             if (opset.getName().equals(opsetName)) {
                 //use built in arraylist method to find index
@@ -108,7 +108,7 @@ public class Automotive implements Serializable {
         return -1;
     }
 
-    public OptionSet findOpset(String opsetName) {
+    public synchronized OptionSet findOpset(String opsetName) {
         for (OptionSet opset : optionSets) {
             if (opset.getName().equals(opsetName)) {
                 return opset;
@@ -117,7 +117,7 @@ public class Automotive implements Serializable {
         return null;
     }
 
-    public Option findOption(String opsetName, String opName) {
+    public synchronized Option findOption(String opsetName, String opName) {
         if (opsetName != null && opName != null) {
             OptionSet opset = findOpset(opsetName);
             return opset.findOption(opName);
@@ -126,7 +126,7 @@ public class Automotive implements Serializable {
     }
 
     //add methods
-    public boolean addOpset(String name){
+    public synchronized boolean addOpset(String name){
         if (name != null) {
             optionSets.add(new OptionSet(name));
             return true;
@@ -135,7 +135,7 @@ public class Automotive implements Serializable {
         return false;
     }
 
-    public boolean addOption(int opsetIndex, String opname, float opPrice) {
+    public synchronized boolean addOption(int opsetIndex, String opname, float opPrice) {
         if (opname != null && opname != null) {
             if (opsetIndex != -1) {
                 return optionSets.get(opsetIndex).addOption(opname, opPrice);
@@ -145,18 +145,18 @@ public class Automotive implements Serializable {
         return false;
     }
 
-    public void addOptionChoice(Option choice) {
+    public synchronized void addOptionChoice(Option choice) {
         choices.add(choice);
     }
 
     //update methods
-    public void updateOpsetName(String name, String newName) {
+    public synchronized void updateOpsetName(String name, String newName) {
         if (name != null && newName != null) {
             findOpset(name).setName(newName);
         }
     }
 
-    public void updateOpset(String name, OptionSet newOpset) {
+    public synchronized void updateOpset(String name, OptionSet newOpset) {
         if (name != null && !newOpset.equals(null)) {
             int opsetIndex = findOpsetIndex(name);
             if (opsetIndex != -1) {
@@ -165,7 +165,7 @@ public class Automotive implements Serializable {
         }
     }
     //update the entire option
-    public void updateOp(String opsetName, String opname, String newOpname, float newPrice ) {
+    public synchronized void updateOp(String opsetName, String opname, String newOpname, float newPrice ) {
         if (opsetName != null && opname != null && newOpname!= null) {
             int opsetIndex = findOpsetIndex(opsetName);
             if (opsetIndex != -1) {
@@ -174,7 +174,7 @@ public class Automotive implements Serializable {
         }
     }
 
-    public void updateOpname (String opsetName, String opname, String newOpname) {
+    public synchronized void updateOpname (String opsetName, String opname, String newOpname) {
         if (opsetName != null && opname != null && newOpname!= null) {
             int opsetIndex = findOpsetIndex(opsetName);
             if (opsetIndex != -1) {
@@ -183,7 +183,7 @@ public class Automotive implements Serializable {
         }
     }
 
-    public void updateOpPrice (String opsetName, String opname, float newPrice) {
+    public synchronized void updateOpPrice (String opsetName, String opname, float newPrice) {
         if (opsetName != null && opname != null) {
             int opsetIndex = findOpsetIndex(opsetName);
             if (opsetIndex != -1) {
@@ -193,7 +193,7 @@ public class Automotive implements Serializable {
     }
 
     //delete methods
-    public boolean deleteOpset(String name) {
+    public synchronized boolean deleteOpset(String name) {
         if (optionSets != null) {
             for(int i = 0; i < optionSets.size(); i++) {
                 if (optionSets.get(i).getName().equals(name)) {
@@ -206,7 +206,7 @@ public class Automotive implements Serializable {
         return false;
     }
 
-    public boolean deleteOption(String opsetName, String opName) {
+    public synchronized boolean deleteOption(String opsetName, String opName) {
         if (optionSets != null) {
             for (int i = 0; i < optionSets.size(); i++) {
                 if(optionSets.get(i).getName().equals(opsetName)) {
@@ -217,11 +217,11 @@ public class Automotive implements Serializable {
         return false;
     }
 
-    public void clearChoices() {
+    public synchronized void clearChoices() {
         this.choices.clear();
     }
 
-    public void selectChoices() {
+    public synchronized void selectChoices() {
         Scanner scanner = new Scanner(System.in);
         //clear existing choices so user can pick again
         if (getChoices().size() > 0) {
@@ -247,7 +247,7 @@ public class Automotive implements Serializable {
         }
     }
 
-    public float getTotalPrice() {
+    public synchronized float getTotalPrice() {
         float total = this.getBaseprice();
         for(int i = 0; i < choices.size(); i++) {
             total += choices.get(i).getPrice();
@@ -258,7 +258,7 @@ public class Automotive implements Serializable {
 
 
     //print method for the Automotive object
-    public void print() {
+    public synchronized void print() {
         System.out.printf("%s\nBase Price: $%.2f\n", getName(), baseprice);
         if (optionSets != null) {
             for(OptionSet opset : optionSets) {
@@ -267,7 +267,7 @@ public class Automotive implements Serializable {
         }
     }
 
-    public void printChoices() {
+    public synchronized void printChoices() {
         System.out.printf("%s with selected options:\n", getName());
         if (choices != null) {
             for (Option op : choices) {
