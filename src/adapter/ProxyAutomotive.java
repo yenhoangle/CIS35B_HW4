@@ -15,6 +15,10 @@ public abstract class ProxyAutomotive {
         at1 = new AutoTemplate();
     }
 
+    public AutoTemplate getAutoTemplate() {
+        return at1;
+    }
+
     //implements CreateAuto interface methods via subclass BuildAuto
     public void buildAuto(String filename) throws AutoException {
         FileIO fileIO = new FileIO();
@@ -37,6 +41,7 @@ public abstract class ProxyAutomotive {
 
     //implements FixAuto interface method
     public void fix(int errno)  {
+        //implementation already included in fileIO
     }
 
     //implements ConfigureAuto interface methods
@@ -55,16 +60,25 @@ public abstract class ProxyAutomotive {
         return at1.getVehicle(key).getTotalPrice();
     }
 
-    //implements ScaleAuto methods
-    public void syncUpdateOptionSetName(int threadNum, String key, String opsetName, String newOpsetName) {
-
+    //implements ScaleAuto interface methods
+    public void updateOptionSetName(int threadNum, String key, String opsetName, String newOpsetName) {
+        //start thread with a number
+        EditOptions thread = new EditOptions(threadNum, key, opsetName, newOpsetName);
+        //run
+        thread.start();
     }
 
-    public void syncUpdateOptionName(int threadNum, String key, String opsetName, String opName, String newOpName) {
-
+    public void updateOptionName(int threadNum, String key, String opsetName, String opName, String newOpName) {
+        //start thread with a number
+        EditOptions thread = new EditOptions(threadNum, key, opsetName, opName, newOpName);
+        //run
+        thread.start();
     }
 
-    public void syncUpdateOptionPrice(int threadNum, String key, String opsetName, String opName, float newPrice) {
-
+    public void updateOptionPrice(int threadNum, String key, String opsetName, String opName, float newPrice) {
+        //start thread with a number
+        EditOptions thread = new EditOptions(threadNum, key, opsetName, opName, newPrice);
+        //run
+        thread.start();
     }
 }
