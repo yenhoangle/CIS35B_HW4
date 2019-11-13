@@ -7,12 +7,11 @@ import scale.*;
 import java.util.Scanner;
 
 public abstract class ProxyAutomotive {
-    private static AutoTemplate at1;
+    private static AutoTemplate at1 = new AutoTemplate();
     private static Automotive a1;
 
     public ProxyAutomotive() {
         a1 = new Automotive();
-        at1 = new AutoTemplate();
     }
 
     public AutoTemplate getAutoTemplate() {

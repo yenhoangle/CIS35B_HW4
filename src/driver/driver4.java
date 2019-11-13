@@ -1,8 +1,6 @@
 package driver;
 import adapter.*;
 import exception.AutoException;
-import util.FileIO;
-import scale.EditOptions;
 
 public class driver4 {
     public static void main(String[] args) throws AutoException{
@@ -19,7 +17,7 @@ public class driver4 {
             System.out.println("Started Thread 2...");
             sa1.updateOptionSetName(1, autoName, "Color", "Colour");
             System.out.println("Editing Option Set name in thread 1...");
-            sa2.updateOptionSetName(2, autoName, "Colour", "Color");
+            sa2.updateOptionSetName(2, autoName, "Color", "Shade");
             System.out.println("Editing Option Set name in thread 2...");
             System.out.println("Printing Auto after editing...");
             auto.printAuto(autoName);

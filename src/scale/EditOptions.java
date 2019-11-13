@@ -63,12 +63,10 @@ public class EditOptions extends ProxyAutomotive implements Runnable {
     }
 
     public void syncUpdateOptionSetName(String key, String opsetName, String newOpsetName) {
-        //OptionSet optionSet = getAutoTemplate().getVehicle(key).findOpset(opsetName);
         synchronized (getAutoTemplate().getVehicle(key)) {
-            //if there is already an edit option running, wait
             while (isBusy) {
                 try {
-                    wait();
+                    getAutoTemplate().getVehicle(key).wait();
                 } catch (InterruptedException ie) {
                     System.out.println("Thread " + Integer.toString(threadNum) + "was interrupted");
                 }
@@ -76,7 +74,7 @@ public class EditOptions extends ProxyAutomotive implements Runnable {
             isBusy = true;
             updateOptionSetName(key, opsetName, newOpsetName);
             isBusy = false;
-            notifyAll();
+            getAutoTemplate().getVehicle(key).notifyAll();
         }
 
     }
@@ -86,7 +84,7 @@ public class EditOptions extends ProxyAutomotive implements Runnable {
         synchronized (getAutoTemplate().getVehicle(key)) {
             while(isBusy) {
                 try {
-                    wait();
+                    getAutoTemplate().getVehicle(key).wait();
 
                 } catch (InterruptedException ie) {
                     System.out.println("Thread " + Integer.toString(threadNum) + "was interrupted");
@@ -95,16 +93,15 @@ public class EditOptions extends ProxyAutomotive implements Runnable {
             isBusy = true;
             getAutoTemplate().getVehicle(key).updateOpname(opsetName, opName, newOpName);
             isBusy = false;
-            notifyAll();
+            getAutoTemplate().getVehicle(key).notifyAll();
         }
     }
 
     public void syncUpdateOptionPrice(String key, String opsetName, String opName, float newPrice) {
-        Option option = getAutoTemplate().getVehicle(key).findOption(opsetName, opName);
         synchronized (getAutoTemplate().getVehicle(key)) {
             while(isBusy) {
                 try {
-                    wait();
+                    getAutoTemplate().getVehicle(key).wait();
 
                 } catch (InterruptedException ie) {
                     System.out.println("Thread " + Integer.toString(threadNum) + "was interrupted");
@@ -113,7 +110,7 @@ public class EditOptions extends ProxyAutomotive implements Runnable {
             isBusy = true;
             getAutoTemplate().getVehicle(key).updateOpPrice(opsetName, opName, newPrice);
             isBusy = false;
-            notifyAll();
+            getAutoTemplate().getVehicle(key).notifyAll();
         }
     }
 

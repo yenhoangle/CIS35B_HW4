@@ -152,12 +152,15 @@ public class Automotive implements Serializable {
     //update methods
     public synchronized void updateOpsetName(String name, String newName) {
         if (name != null && newName != null) {
-            findOpset(name).setName(newName);
+            OptionSet op = findOpset(name);
+            if (op != null) {
+                op.setName(newName);
+            }
         }
     }
 
     public synchronized void updateOpset(String name, OptionSet newOpset) {
-        if (name != null && !newOpset.equals(null)) {
+        if (name != null) {
             int opsetIndex = findOpsetIndex(name);
             if (opsetIndex != -1) {
                 optionSets.set(opsetIndex, newOpset);
