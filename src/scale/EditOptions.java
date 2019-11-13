@@ -1,6 +1,13 @@
+/*
+ * Yen Le
+ * 20123455
+ *
+ * EditOptions.java
+ * Class which enables multi-threading within the program.
+ * */
+
 package scale;
 import adapter.ProxyAutomotive;
-import model.*;
 
 public class EditOptions extends ProxyAutomotive implements Runnable {
     private String key;
@@ -64,6 +71,7 @@ public class EditOptions extends ProxyAutomotive implements Runnable {
 
     public void syncUpdateOptionSetName(String key, String opsetName, String newOpsetName) {
         synchronized (getAutoTemplate().getVehicle(key)) {
+            //if the auto is already being edited, wait
             while (isBusy) {
                 try {
                     getAutoTemplate().getVehicle(key).wait();
@@ -74,14 +82,15 @@ public class EditOptions extends ProxyAutomotive implements Runnable {
             isBusy = true;
             updateOptionSetName(key, opsetName, newOpsetName);
             isBusy = false;
+            //notify all other threads that current thread is done running
             getAutoTemplate().getVehicle(key).notifyAll();
         }
 
     }
 
     public void syncUpdateOptionName(String key, String opsetName, String opName, String newOpName) {
-        Option option = getAutoTemplate().getVehicle(key).findOption(opsetName, opName);
         synchronized (getAutoTemplate().getVehicle(key)) {
+            //if the auto is already being edited, wait
             while(isBusy) {
                 try {
                     getAutoTemplate().getVehicle(key).wait();
@@ -93,12 +102,14 @@ public class EditOptions extends ProxyAutomotive implements Runnable {
             isBusy = true;
             getAutoTemplate().getVehicle(key).updateOpname(opsetName, opName, newOpName);
             isBusy = false;
+            //notify all other threads that current thread is done running
             getAutoTemplate().getVehicle(key).notifyAll();
         }
     }
 
     public void syncUpdateOptionPrice(String key, String opsetName, String opName, float newPrice) {
         synchronized (getAutoTemplate().getVehicle(key)) {
+            //if the auto is already being edited, wait
             while(isBusy) {
                 try {
                     getAutoTemplate().getVehicle(key).wait();
@@ -110,11 +121,13 @@ public class EditOptions extends ProxyAutomotive implements Runnable {
             isBusy = true;
             getAutoTemplate().getVehicle(key).updateOpPrice(opsetName, opName, newPrice);
             isBusy = false;
+            //notify all other threads that current thread is done running
             getAutoTemplate().getVehicle(key).notifyAll();
         }
     }
 
     public void run() {
+        //calls appropriate function depending on which thread type is instantiated based on constructor
         switch(editOp) {
             case "syncUpdateOptionSetName":
                 syncUpdateOptionSetName(key, opsetName, newOpsetName);

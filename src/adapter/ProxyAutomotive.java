@@ -1,10 +1,18 @@
+/*
+ * Yen Le
+ * 20123455
+ *
+ * ProxyAuto.java
+ * Abstract class which implements all the interface functions for BuildAuto. Interface methods are implemented here so
+ * that implementations are hidden from the external environment. ProxyAuto cannot be instantiated and thus is hidden.
+ * */
+
 package adapter;
 import exception.AutoException;
 import model.AutoTemplate;
 import model.Automotive;
 import util.FileIO;
 import scale.*;
-import java.util.Scanner;
 
 public abstract class ProxyAutomotive {
     private static AutoTemplate at1 = new AutoTemplate();
@@ -67,14 +75,16 @@ public abstract class ProxyAutomotive {
         thread.start();
     }
 
-    public synchronized void updateOptionName(int threadNum, String key, String opsetName, String opName, String newOpName) {
+    public synchronized void updateOptionName(int threadNum, String key, String opsetName, String opName,
+                                              String newOpName) {
         //start thread with a number
         EditOptions thread = new EditOptions(threadNum, key, opsetName, opName, newOpName);
         //run
         thread.start();
     }
 
-    public synchronized void updateOptionPrice(int threadNum, String key, String opsetName, String opName, float newPrice) {
+    public synchronized void updateOptionPrice(int threadNum, String key, String opsetName, String opName,
+                                               float newPrice) {
         //start thread with a number
         EditOptions thread = new EditOptions(threadNum, key, opsetName, opName, newPrice);
         //run
